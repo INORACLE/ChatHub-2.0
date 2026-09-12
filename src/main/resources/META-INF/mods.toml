@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[46,)"
+license="${mod_license}"
+issueTrackerURL="https://github.com/INORACLE/ChatHub-2.0/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''
+ChatHub 2.0 for Minecraft Forge 1.20.1.
+
+A single-server port of the ChatHub plugin (originally a Velocity chat-sync
+plugin). It relays chat between the Minecraft server and the QQ group bot, and
+prefixes in-game chat lines with the sender's current dimension name.
+
+JSON handling uses Gson (bundled with Minecraft), HTTP uses the JDK
+java.net.http client, and the QQ reverse WebSocket server uses Java-WebSocket
+(bundled via Jar-in-Jar).
+'''
+
+[[dependencies.${mod_id}]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"

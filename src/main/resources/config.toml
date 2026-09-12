@@ -1,0 +1,54 @@
+# ChatHub 2.0 (Forge 1.20.1) default config.
+# Minecraft messages use the section (formatting) character, e.g. §7 = gray.
+
+[core]
+threadPoolSize = 2
+
+[server]
+name = 'Minecraft'
+
+[minecraft]
+# When true, vanilla chat is replaced by the formatted line below so the
+# dimension prefix is displayed before the player name in the chat box.
+completeTakeoverMode = true
+ignoreChatMessageRe = ["^!!.*"]
+
+[minecraft.message]
+chat = '§7[§b{dimension}§7]§e{name}§r: {message}'
+join = '§8[§a+§8]§e{name}'
+leave = '§8[§c-§8]§e{name}'
+list = '§8§l» §7当前共有§6{count}§7名玩家在线: §e{playerList}'
+listEmpty = '当前没有玩家在线'
+
+# Dimension display names shown before player names in the chat box.
+[dimension]
+overworld = '主世界'
+the_nether = '下界'
+the_end = '末地'
+
+[qq]
+enable = true
+groupId = ''
+robotUserId = ''
+robotNickname = 'ChatBot'
+sendToMinecraft = true
+sendToQQ = true
+enableBinding = false
+admins = []
+
+# QQ Bot official API configuration (leave empty to use OneBot reverse WS)
+[qq.bot]
+appId = ''
+appSecret = ''
+
+[qq.api]
+host = '0.0.0.0'
+wsReversePort = 9001
+wsReversePath = '/ws/'
+
+[qq.message]
+chat = '[{server}] <{name}>: {message}'
+join = '[+] {name}'
+leave = '[-] {name}'
+list = '当前共有{count}名玩家在线: {playerList}'
+listEmpty = '当前没有玩家在线'
